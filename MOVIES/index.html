@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alstrange</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- START NAVBAR -->
+
+    <div class="navbar">
+      <div class="navbar-container">
+        <div class="menu-toggle"></div>
+        <img src="alstrange .png" alt="Logo" class="logo" />
+        <div class="menu-container">
+          <ul class="menu-list">
+            <li class="menu-list-item active">
+              <a href="http://localhost/webCOPY/index.php">Home</a>
+            </li>
+            <li class="menu-list-item">
+              <a href="http://localhost/webCOPY/MOVIES/index.html">Movies</a>
+            </li>
+            <li class="menu-list-item">
+              <a href="http://localhost/webCOPY/POPULAR/index.html">Popular</a>
+            </li>
+            <li class="menu-list-item" onclick="toggleDropdown()">
+              Genre <i class="fa fa-caret-down"></i>
+              <ul class="submenu" id="genreDropdown">
+                <li>
+                  <a href="http://localhost/webCOPY/GENRE/DRAMA/index.html"
+                    >Drama</a
+                  >
+                </li>
+                <li>
+                  <a href="http://localhost/webCOPY/GENRE/ACTION/index.html"
+                    >Action</a
+                  >
+                </li>
+                <li>
+                  <a href="http://localhost/webCOPY/GENRE/HORROR/index.html"
+                    >Horror</a
+                  >
+                </li>
+                <li>
+                  <a href="http://localhost/webCOPY/GENRE/KOMEDI/index.html"
+                    >Komedi</a
+                  >
+                </li>
+                <li>
+                  <a href="http://localhost/webCOPY/GENRE/ROMANCE/index.html"
+                    >Romance</a
+                  >
+                </li>
+                <!-- Tambahkan genre lainnya di sini -->
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="searchResults"></div>
+    </div>
+
+    <!-- END NAVBAR -->
+    <!-- FILM START -->
+    <div class="movie-list-container">
+      <div class="judul">
+        <h1 class="movie-list-title"><span>|</span> NEW RELEASES</h1>
+      </div>
+
+      <div class="movie-list-wrapper">
+        <div class="card">
+          <img
+            src="https://i.ytimg.com/vi/pg_Ij-3YySM/maxresdefault.jpg"
+            alt="Placeholder Image"
+          />
+          <div class="overlay">
+            <div class="text">Fast and Feel Love (2022)</div>
+            <a href="FILM/POKEMON/POKEMON.html" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVZzAxhbOc3ukjc0KLeFcQhOMlAJxYwIATbHKO7FeiJw&s"
+            alt="Placeholder Image"
+          />
+          <div class="overlay">
+            <div class="text">
+              Doctor Strange in the Multiverse of Madness (2022)
+            </div>
+            <a href="" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyRLF5UE3mOBHCEjDaXG1b3b7QfkZJif-x9YKJodtbLA&s"
+            alt="Placeholder Image"
+          />
+          <div class="overlay">
+            <div class="text">The Batman (2022)</div>
+            <a href="/FILM/BATMAN/POKEMON.html" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE7obmG28H-JQ-60o2FBYoj9ZeEKI06_B4B7-AQqAjiQ&s"
+            alt="Placeholder Image"
+          />
+          <div class="overlay">
+            <div class="text">Ip Man: The Awakening (2022)</div>
+            <a href="/FILM/IPMAN/DOCTOR.html" class="button">Watch</a>
+          </div>
+        </div>
+
+        <!-- FILM 1 END -->
+      </div>
+    </div>
+
+    <!-- FILM START -->
+    <div class="movie-list-container">
+      <div class="judul">
+        <h1 class="movie-list-title"><span>|</span> DRAMA</h1>
+      </div>
+
+      <div class="movie-list-wrapper">
+        <div class="card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs-QuERo71BIgULh124kuLPPq6p7xtAXD4374W5Utb-A&s"
+            alt="Placeholder Image"
+          />
+          <div class="overlay">
+            <div class="text">Infinite Strom (2022)</div>
+            <a href="/FILM/STORM/POKEMON.html" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://i.ytimg.com/vi/8CRBEQ2MCr8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDQ3FT91Rj95Dml-MX3R4-pI63FUg"
+            alt="Placeholder Image"
+          />
+          <div class="overlay">
+            <div class="text">Night Drive (2022)</div>
+            <a href="/FILM/NIGHTDRIVE-DRAMA/POKEMON.html" class="button"
+              >Watch</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXuKPUPX0jqEye1OYt6KZgxlQiPkUsSYA7EPOFsB4hZgjUuJo1Z6puBnAxsVDsINJ29u4&usqp=CAU"
+            alt="Placeholder Image"
+          />
+          <div class="overlay">
+            <div class="text">Interceptor (2022)</div>
+            <a href="/FILM/INTERCEPTOR-DRAMA/POKEMON.html" class="button"
+              >Watch</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/1.jpeg" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/1.jpeg" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <!-- FILM 1 END -->
+      </div>
+    </div>
+
+    <!-- FILM START -->
+    <div class="movie-list-container">
+      <div class="judul">
+        <h1 class="movie-list-title"><span>|</span> ACTION</h1>
+      </div>
+
+      <div class="movie-list-wrapper">
+        <div class="card">
+          <img
+            src="https://asset-2.tstatic.net/tribunnewswiki/foto/bank/images/Film-The-Northman-20222.jpg"
+            alt="Placeholder Image"
+          />
+          <div class="overlay">
+            <div class="text">The Northman (2022)</div>
+            <a href="/FILM/NORTHMAN-ACTION/POKEMON.html" class="button"
+              >Watch</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/tokyo.png" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/1.jpeg" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/1.jpeg" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/1.jpeg" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <!-- FILM 1 END -->
+      </div>
+    </div>
+
+    <!-- FILM START -->
+    <div class="movie-list-container">
+      <div class="judul">
+        <h1 class="movie-list-title"><span>|</span> HORROR</h1>
+      </div>
+
+      <div class="movie-list-wrapper">
+        <div class="card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQFz7mMmMqKB8o9tdo4jIxuTD5O35Ks0r_eRmMKt7ZUA&s"
+            alt="Placeholder Image"
+          />
+          <div class="overlay">
+            <div class="text">The Ghosts of Borley Rectory (2022)</div>
+            <a href="/FILM/GHOST/POKEMON.html" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/tokyo.png" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/1.jpeg" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/1.jpeg" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/1.jpeg" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <!-- FILM 1 END -->
+      </div>
+    </div>
+
+    <!-- FILM START -->
+    <div class="movie-list-container">
+      <div class="judul">
+        <h1 class="movie-list-title"><span>|</span> KOMEDI</h1>
+      </div>
+
+      <div class="movie-list-wrapper">
+        <div class="card">
+          <img src="img/poster_pokemon.png" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Pokémon: Detective Pikachu (2023)</div>
+            <a href="/FILM/POKEMON/POKEMON.html" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/tokyo.png" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/1.jpeg" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/1.jpeg" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/1.jpeg" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <!-- FILM 1 END -->
+      </div>
+    </div>
+
+    <!-- FILM START -->
+    <div class="movie-list-container">
+      <div class="judul">
+        <h1 class="movie-list-title"><span>|</span> ROMANCE</h1>
+      </div>
+
+      <div class="movie-list-wrapper">
+        <div class="card">
+          <img src="img/poster_pokemon.png" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Pokémon: Detective Pikachu (2023)</div>
+            <a href="FILM/POKEMON/POKEMON.html" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/tokyo.png" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/1.jpeg" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/1.jpeg" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/1.jpeg" alt="Placeholder Image" />
+          <div class="overlay">
+            <div class="text">Title Here</div>
+            <a href="#" class="button">Watch</a>
+          </div>
+        </div>
+
+        <!-- FILM 1 END -->
+      </div>
+    </div>
+
+    <!-- HALAMAN DEPAN END -->
+
+    <script>
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+      }
+    </script>
+
+    <!-- Your HTML code -->
+
+    <script>
+      // Tambahkan event listener untuk event input (saat pengguna mengetik)
+      searchInput.addEventListener("input", function () {
+        // Tangkap nilai input
+        const searchTerm = searchInput.value.toLowerCase();
+
+        // Jika input pencarian kosong
+        if (searchTerm.trim() === "") {
+          // Kosongkan hasil pencarian
+          searchResults.innerHTML = "";
+
+          // Tampilkan kembali semua card film
+          const allCards = document.querySelectorAll(".card");
+          allCards.forEach((card) => {
+            card.style.display = "block";
+          });
+        } else {
+          // Jika input pencarian tidak kosong
+          // Bersihkan hasil pencarian sebelumnya
+          searchResults.innerHTML = "";
+
+          // Tangkap semua card film
+          const cards = document.querySelectorAll(".card");
+
+          // Iterasi melalui setiap card
+          cards.forEach((card) => {
+            // Tangkap judul film dalam card
+            const title = card.querySelector(".text").textContent.toLowerCase();
+
+            // Bandingkan judul film dengan input pencarian
+            if (title.includes(searchTerm)) {
+              // Jika cocok, tambahkan card ke hasil pencarian
+              searchResults.appendChild(card.cloneNode(true));
+            }
+          });
+        }
+      });
+    </script>
+
+    <script>
+      function toggleDropdown() {
+        var dropdown = document.getElementById("genreDropdown");
+        dropdown.style.display =
+          dropdown.style.display === "block" ? "none" : "block";
+      }
+    </script>
+  </body>
+</html>

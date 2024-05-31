@@ -1,0 +1,47 @@
+body {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.panel-info {
+  background-color: rgb(56, 56, 56);
+  border-color: rgb(23, 23, 23);
+}
+.panel-heading {
+  color: #000;
+  background-color: #fff;
+  border-color: rgb(17, 17, 17);
+}
+.panel-title {
+  color: black;
+}
+.form-control {
+  background-color: #ffffff;
+  color: #fff;
+  border-color: aquamarine;
+}
+.form-control:focus {
+  border-color: rgb(44, 44, 44);
+  background-color: #000;
+  color: #fff;
+}
+.btn-success {
+  background-color: aquamarine;
+  border-color: aquamarine;
+  color: #000;
+}
+.btn-success:hover {
+  background-color: #fff;
+  border-color: aquamarine;
+  color: #000;
+}
+.btn-link {
+  color: rgb(255, 255, 255);
+}
+.btn-link:hover {
+  color: #fff;
+}
+

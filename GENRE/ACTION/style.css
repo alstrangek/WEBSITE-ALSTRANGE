@@ -1,0 +1,481 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #000000;
+}
+
+/* START NAVBAR */
+
+.navbar {
+  background-color: #000000;
+  padding: 10px 0;
+}
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  max-height: 40px;
+}
+
+.menu-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Menengahkan menu */
+}
+
+.menu-list-item {
+  margin-right: 20px;
+  color: #fff;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-button {
+  padding: 8px 15px;
+  background-color: aquamarine;
+  border: none;
+  border-radius: 5px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.menu-list-item.active a {
+  font-weight: bold; /* Menjadikan teks aktif (Home) menjadi tebal */
+  background-color: rgb(0, 0, 0);
+  color: aquamarine;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-container {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-toggle.active {
+    display: none;
+  }
+
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .menu-list-item {
+    margin: 10px 0;
+  }
+
+  .search-container {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .search-input {
+    display: none;
+  }
+}
+
+/* navbar pt 2 start */
+.menu-list-item {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: -60px;
+  background-color: #222222;
+  text-decoration: none;
+  width: 170px;
+  text-align: center;
+  border-radius: 4px;
+  list-style-type: none;
+  z-index: 100;
+}
+
+.menu-list-item:hover .submenu {
+  display: block;
+}
+
+.submenu li {
+  margin: 5px 0;
+}
+
+.submenu a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+  width: 150px;
+}
+
+.submenu a:hover {
+  background-color: #000000;
+}
+
+.menu-list-item a {
+  color: white;
+  text-decoration: none;
+}
+.menu-list-item a::after {
+  /* Pseudo-element untuk garis bawah */
+  content: ""; /* Pseudo-element kosong */
+  position: absolute; /* Posisi absolut untuk mengontrol garis */
+  bottom: 0; /* Garis di bawah teks */
+  left: 50%; /* Mulai dari tengah */
+  transform: translateX(-50%); /* Geser ke kiri setengah lebar */
+  border-bottom: 2px solid transparent; /* Garis transparan awalnya */
+  width: 0; /* Lebar garis pendek (awal) */
+  transition: width 0.3s ease; /* Transisi untuk memperpanjang garis */
+}
+
+.menu-list-item a:hover::after {
+  /* Saat hover, perpanjang garis */
+  border-bottom: 2px solid aquamarine; /* Ubah garis menjadi terlihat */
+  width: 100%; /* Lebarkan garis hingga penuh */
+}
+
+.menu-list-item a:hover {
+  color: rgb(255, 255, 255); /* Ubah warna teks saat hover */
+}
+/* navbar pt 2 end */
+
+/* END NAVBAR */
+
+.container {
+  background-color: #151515;
+  min-height: calc(100vh - 50px);
+  color: #ffffff;
+}
+.content-contrainer {
+  margin-left: 50px;
+}
+.featured-content {
+  height: 50vh;
+  padding: 50px;
+}
+.featured-title {
+  width: 400px;
+  margin-left: -30px;
+}
+.featured-desc {
+  width: 500px;
+  color: lightgray;
+  margin: 25px 0;
+}
+.featured-button {
+  background-color: aquamarine;
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+.judul h1 {
+  color: #ffffff;
+}
+/* HALAMAN DEPAN END */
+
+/* FILM START */
+.movie-list-title {
+}
+
+.judul {
+  display: flex;
+  left: 10px;
+  position: absolute;
+  margin-bottom: 100px;
+}
+
+.movie-list-container {
+  display: flex;
+  padding: 20px;
+  overflow-x: scroll;
+}
+
+.movie-list-container .judul {
+  margin: 20px;
+}
+
+.movie-list-wrapper {
+  position: relative;
+  display: flex;
+}
+.movie-list {
+  display: flex;
+  align-items: center;
+  height: 300px;
+}
+
+.movie-list-item {
+  margin-right: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-list-item:hover .movie-list-item-img {
+  transform: scale(1.2);
+  margin: 0 30px;
+  opacity: 0.5;
+}
+.movie-list-item:hover .movie-list-item-title,
+.movie-list-item:hover .movie-list-item-desc,
+.movie-list-item:hover .movie-list-item-button {
+  opacity: 1;
+}
+
+.movie-list-item-img {
+  transition: all 0.7s ease-in-out;
+  width: 270px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.movie-list-item-title {
+  background-color: #0000006c;
+  padding: 1px;
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: -190px;
+  margin-bottom: 0px;
+  width: 60px;
+  z-index: 1;
+  margin-left: 20px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+
+.movie-list-item-desc {
+  font-size: 15px;
+  padding: 7%;
+  position: relative;
+  background-color: #0000006c;
+  width: 250px;
+  margin: 0;
+  margin-top: auto;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+.movie-list-item-button {
+  z-index: 1;
+  width: 20%;
+  font-size: 14px;
+  background-color: aquamarine;
+  color: #000000;
+  padding: 7px 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-left: 20px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+  text-decoration: none;
+  text-align: center;
+}
+
+.movie-list-item-button:hover {
+  background-color: white;
+}
+
+.arrow {
+  font-size: 70px;
+  position: absolute;
+  top: 130px;
+  right: 0px;
+  color: lightgray;
+  opacity: 0.5;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+}
+.movie-list-title span {
+  color: aquamarine;
+}
+
+.portfolio-section .card .card-img-top {
+  height: 230px;
+  width: 100%;
+  object-fit: cover;
+}
+/* FILM END */
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  transition: box-shadow 0.5s, transform 0.5s;
+  margin-top: 80px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5;
+}
+.card:hover {
+  transform: scale(1.2); /* Memperbesar gambar saat hover */
+  z-index: 2;
+}
+.card:hover img {
+  transform: scale(1.1); /* Memperbesar gambar saat hover */
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: aquamarine;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  font-family: "Poppins", sans-serif;
+}
+
+.button:hover {
+  background-color: #000000;
+  color: #fff;
+}
+
+/* HALAMAN DEPAN START  */
+
+.centered-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2px;
+}
+
+.line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: rgb(46, 46, 46);
+  margin: 0 10px;
+}
+
+.text {
+  font-size: 30px;
+  font-weight: bold;
+}
+.poster-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+  grid-template-rows: repeat(2, 1fr); /* 2 baris */
+  gap: 10px; /* Jarak antar kotak */
+  padding: 20px;
+}
+
+.poster-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+  grid-template-rows: repeat(2, 1fr); /* 2 baris */
+  gap: 10px; /* Jarak antar kotak */
+  padding: 20px;
+}
+
+.poster {
+  position: relative; /* Dibutuhkan untuk memposisikan info */
+  overflow: hidden; /* Mencegah elemen keluar dari batas */
+  height: 200px; /* Tinggi awal kotak */
+  transition: transform 0.3s ease; /* Transisi untuk efek pembesaran */
+  border-radius: 5px;
+}
+
+.poster img {
+  width: 100%; /* Ukuran gambar sesuai lebar kotak */
+  height: 100%; /* Ukuran gambar sesuai tinggi kotak */
+  object-fit: cover; /* Mempertahankan proporsi gambar */
+}
+
+.info {
+  position: absolute;
+  bottom: -40px; /* Diletakkan di bawah batas awal */
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Transparansi */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  transition: bottom 0.3s ease; /* Transisi untuk efek naik */
+}
+
+.poster.hover {
+  transform: scale(1.2); /* Memperbesar kotak saat hover */
+  z-index: 100;
+}
+
+.poster.hover .info {
+  bottom: 0; /* Menunjukkan info saat hover */
+}
+
+/* HALAMAN DEPAN END */

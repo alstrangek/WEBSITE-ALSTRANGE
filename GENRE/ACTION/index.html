@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alstrange</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <style>
+      .button {
+        padding: 5px 10px;
+        background-color: aquamarine;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        border-radius: 10px;
+        transition: background-color 0.3s;
+        font-family: "Poppins", sans-serif;
+      }
+      .button a {
+        font-size: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- START NAVBAR -->
+
+    <div class="navbar">
+      <div class="navbar-container">
+        <div class="menu-toggle"></div>
+        <img src="alstrange .png" alt="Logo" class="logo" />
+        <div class="menu-container">
+          <ul class="menu-list">
+            <li class="menu-list-item active">
+              <a href="../../index.php">Home</a>
+            </li>
+            <li class="menu-list-item">
+              <a href="../../MOVIES/index.html">Movies</a>
+            </li>
+            <li class="menu-list-item">
+              <a href="../../POPULAR/index.html">Popular</a>
+            </li>
+            <li class="menu-list-item" onclick="toggleDropdown()">
+              Genre <i class="fa fa-caret-down"></i>
+              <ul class="submenu" id="genreDropdown">
+                <li>
+                  <a href="../../GENRE/DRAMA/index.html">Drama</a>
+                </li>
+                <li>
+                  <a href="../../GENRE/ACTION/index.html">Action</a>
+                </li>
+                <li>
+                  <a href="../../GENRE/HORROR/index.html">Horror</a>
+                </li>
+                <li>
+                  <a href="../../GENRE/KOMEDI/index.html">Komedi</a>
+                </li>
+                <li>
+                  <a href="../../GENRE/ROMANCE/index.html">Romance</a>
+                </li>
+                <!-- Tambahkan genre lainnya di sini -->
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- END NAVBAR -->
+    <!-- HALAMAN DEPAN START -->
+
+    <div class="centered-line">
+      <span class="line"></span>
+      <span class="text">ACTION</span>
+      <span class="line"></span>
+    </div>
+
+    <div class="poster-container">
+      <div class="poster">
+        <img
+          src="https://asset-2.tstatic.net/tribunnewswiki/foto/bank/images/Film-The-Northman-20222.jpg"
+          alt="Film 1"
+        />
+        <div class="info">
+          <h3>The Northman (2022)</h3>
+
+          <a href="../../FILM/NORTHMAN-ACTION/POKEMON.html" class="button">Watch</a>
+        </div>
+      </div>
+      <div class="poster">
+        <img
+          src="https://material.asset.catchplay.com/SNY-ID-002-A1142/artworks/posters/SNY-ID-002-A1142-P1200.jpg?hash=1714246846"
+          alt="Film 2"
+        />
+        <div class="info">
+          <h3>Morbius (2022)</h3>
+          <a href="../../FILM/NORTHMAN-ACTION/POKEMON.html" class="button">Watch</a>
+        </div>
+      </div>
+
+      <div class="poster">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3L221O_MalE-uLAYEl2b_xhW4YRxzBr697RsrTneBVQ&s"
+          alt="Film 3"
+        />
+        <div class="info">
+          <h3>Ip Man: The Awakening (2022)</h3>
+          <a href="../../FILM/IPMAN/DOCTOR.html" class="button">Watch</a>
+        </div>
+      </div>
+      <div class="poster">
+        <img
+          src="data:image/jpeg;base64,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"
+          alt="Film 4"
+        />
+        <div class="info">
+          <h3>Memory (2022)</h3>
+          <a href="FILM/MEMORY-ACTION/DOCTOR.html" class="button">Watch</a>
+        </div>
+      </div>
+      <div class="poster">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVZzAxhbOc3ukjc0KLeFcQhOMlAJxYwIATbHKO7FeiJw&s"
+          alt="Film 5"
+        />
+        <div class="info">
+          <h3>Doctor Strange in the Multiverse of Madness (2022)</h3>
+          <a href="../../FILM/DOCTOR/DOCTOR.html" class="button">Watch</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HALAMAN DEPAN END -->
+
+    <script>
+      function toggleDropdown() {
+        var dropdown = document.getElementById("genreDropdown");
+        dropdown.style.display =
+          dropdown.style.display === "block" ? "none" : "block";
+      }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const posters = document.querySelectorAll(".poster");
+
+        posters.forEach((poster) => {
+          poster.addEventListener("mouseover", () => {
+            poster.classList.add("hover");
+          });
+
+          poster.addEventListener("mouseout", () => {
+            poster.classList.remove("hover");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

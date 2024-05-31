@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* style.css */
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #000000;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* START NAVBAR */
+
+      .navbar {
+        background-color: #000000;
+        padding: 10px 0;
+      }
+
+      .navbar-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .logo {
+        max-height: 40px;
+      }
+
+      .menu-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center; /* Menengahkan menu */
+      }
+
+      .menu-list-item {
+        margin-right: 20px;
+        color: #fff;
+      }
+
+      .search-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .search-input {
+        padding: 8px;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .search-button {
+        padding: 8px 15px;
+        background-color: aquamarine;
+        border: none;
+        border-radius: 5px;
+        color: #000000;
+        cursor: pointer;
+      }
+
+      .menu-toggle {
+        display: none;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .menu-list-item.active {
+        font-weight: bold; /* Menjadikan teks aktif (Home) menjadi tebal */
+        background-color: rgb(0, 0, 0);
+        color: aquamarine;
+      }
+
+      @media screen and (max-width: 768px) {
+        .menu-container {
+          display: none;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .menu-toggle.active {
+          display: none;
+        }
+
+        .menu-list {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          background-color: #333;
+          padding: 10px 0;
+          text-align: center;
+        }
+
+        .menu-list-item {
+          margin: 10px 0;
+        }
+
+        .search-container {
+          flex: 1;
+          justify-content: flex-end;
+        }
+
+        .search-input {
+          display: none;
+        }
+      }
+
+      /* navbar pt 2 start */
+      .menu-list-item {
+        position: relative;
+      }
+
+      .submenu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: -100px;
+        background-color: #222222;
+        text-decoration: none;
+        width: 170px;
+        text-align: center;
+        border-radius: 4px;
+        list-style-type: none;
+      }
+      .menu-list-item.active a {
+        font-weight: bold; /* Menjadikan teks aktif (Home) menjadi tebal */
+        background-color: rgb(0, 0, 0);
+        color: aquamarine;
+        text-decoration: none;
+      }
+      .menu-list-item:hover .submenu {
+        display: block;
+      }
+
+      .submenu li {
+        margin: 5px 0;
+      }
+
+      .submenu a {
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px;
+        display: inline-block;
+        width: 150px;
+        margin-right: 10px;
+      }
+
+      .submenu a:hover {
+        background-color: #000000;
+      }
+
+      .menu-list-item a {
+        color: white;
+        text-decoration: none;
+      }
+      .menu-list-item a::after {
+        /* Pseudo-element untuk garis bawah */
+        content: ""; /* Pseudo-element kosong */
+        position: absolute; /* Posisi absolut untuk mengontrol garis */
+        bottom: 0; /* Garis di bawah teks */
+        left: 50%; /* Mulai dari tengah */
+        transform: translateX(-50%); /* Geser ke kiri setengah lebar */
+        border-bottom: 2px solid transparent; /* Garis transparan awalnya */
+        width: 0; /* Lebar garis pendek (awal) */
+        transition: width 0.3s ease; /* Transisi untuk memperpanjang garis */
+      }
+
+      .menu-list-item a:hover::after {
+        /* Saat hover, perpanjang garis */
+        border-bottom: 2px solid aquamarine; /* Ubah garis menjadi terlihat */
+        width: 100%; /* Lebarkan garis hingga penuh */
+      }
+
+      .menu-list-item a:hover {
+        color: rgb(255, 255, 255); /* Ubah warna teks saat hover */
+      }
+      /* navbar pt 2 end */
+
+      /* END NAVBAR */
+      /* END NAVBAR */
+
+      .movie-list-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .judul {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .movie-list-title {
+        font-size: 2.5em;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .movie-list-title span {
+        color: aquamarine;
+        margin-right: 10px;
+      }
+
+      .movie-list-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .numbered-card {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background-color: rgb(35, 35, 35);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .numbered-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .number-image {
+        width: 100px;
+        margin-right: 20px;
+      }
+
+      .card {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+      }
+
+      .card img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        opacity: 0;
+        transition: opacity 0.3s;
+        border-radius: 0 0 10px 10px;
+      }
+
+      .numbered-card:hover .overlay {
+        opacity: 1;
+      }
+
+      .text {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      .button {
+        display: inline-block;
+        background-color: aquamarine;
+        color: #000000;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+      }
+
+      .button:hover {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- START NAVBAR -->
+
+    <div class="navbar">
+      <div class="navbar-container">
+        <div class="menu-toggle"></div>
+        <img src="alstrange .png" alt="Logo" class="logo" />
+        <div class="menu-container">
+          <ul class="menu-list">
+            <li class="menu-list-item active">
+              <a href="http://localhost/webCOPY/index.php">Home</a>
+            </li>
+            <li class="menu-list-item">
+              <a href="http://localhost/webCOPY/MOVIES/index.html">Movies</a>
+            </li>
+            <li class="menu-list-item">
+              <a href="http://localhost/webCOPY/POPULAR/index.html">Popular</a>
+            </li>
+            <li class="menu-list-item" onclick="toggleDropdown()">
+              Genre <i class="fa fa-caret-down"></i>
+              <ul class="submenu" id="genreDropdown">
+                <li>
+                  <a href="http://localhost/webCOPY/GENRE/DRAMA/index.html"
+                    >Drama</a
+                  >
+                </li>
+                <li>
+                  <a href="http://localhost/webCOPY/GENRE/ACTION/index.html"
+                    >Action</a
+                  >
+                </li>
+                <li>
+                  <a href="http://localhost/webCOPY/GENRE/HORROR/index.html"
+                    >Horror</a
+                  >
+                </li>
+                <li>
+                  <a href="http://localhost/webCOPY/GENRE/KOMEDI/index.html"
+                    >Komedi</a
+                  >
+                </li>
+                <li>
+                  <a href="http://localhost/webCOPY/GENRE/ROMANCE/index.html"
+                    >Romance</a
+                  >
+                </li>
+                <!-- Tambahkan genre lainnya di sini -->
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="searchResults"></div>
+    </div>
+
+    <!-- END NAVBAR -->
+
+    <div class="movie-list-container">
+      <div class="judul">
+        <h1 class="movie-list-title"><span>|</span> POPULAR</h1>
+      </div>
+
+      <div class="movie-list-wrapper">
+        <div class="numbered-card">
+          <img src="satuu.PNG" class="number-image" alt="Number 1" />
+          <div class="card">
+            <img
+              src="https://i.ytimg.com/vi/pg_Ij-3YySM/maxresdefault.jpg"
+              alt="Fast and Feel Love (2022)"
+            />
+            <div class="overlay">
+              <div class="text">Fast and Feel Love (2022)</div>
+              <a href="../FILM/POKEMON/POKEMON.html" class="button">Watch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="numbered-card">
+          <img src="dua.PNG" class="number-image" alt="Number 2" />
+          <div class="card">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVZzAxhbOc3ukjc0KLeFcQhOMlAJxYwIATbHKO7FeiJw&s"
+              alt="Doctor Strange in the Multiverse of Madness (2022)"
+            />
+            <div class="overlay">
+              <div class="text">
+                Doctor Strange in the Multiverse of Madness (2022)
+              </div>
+              <a href="../FILM/DOCTOR/DOCTOR.html" class="button">Watch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="numbered-card">
+          <img src="tiga.PNG" class="number-image" alt="Number 3" />
+          <div class="card">
+            <img
+              src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/03/The-Batman-Box-Office-500M-75148-PM.jpg"
+              alt="The Batman (2022)"
+            />
+            <div class="overlay">
+              <div class="text">The Batman (2022)</div>
+              <a href="../FILM/BATMAN/POKEMON.html" class="button">Watch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="numbered-card">
+          <img src="empatt.PNG" class="number-image" alt="Number 4" />
+          <div class="card">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3L221O_MalE-uLAYEl2b_xhW4YRxzBr697RsrTneBVQ&s"
+              alt="Ip Man: The Awakening (2022)"
+            />
+            <div class="overlay">
+              <div class="text">Ip Man: The Awakening (2022)</div>
+              <a href="../FILM/IPMAN/DOCTOR.html" class="button">Watch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="numbered-card">
+          <img src="limaa.PNG" class="number-image" alt="Number 5" />
+          <div class="card">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpOd5byLNqjOvNoWcSfV8FCgVTsA0qIem8kimYc1hkKg&s"
+              alt="The Sea Beast (2022)"
+            />
+            <div class="overlay">
+              <div class="text">The Sea Beast (2022)</div>
+              <a href="../FILM/BEAST/POKEMON.html" class="button">Watch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="numbered-card">
+          <img src="enamm.PNG" class="number-image" alt="Number 6" />
+          <div class="card">
+            <img
+              src="https://i.ytimg.com/vi/8CRBEQ2MCr8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDQ3FT91Rj95Dml-MX3R4-pI63FUg"
+              alt="Fast and Feel Love (2022)"
+            />
+            <div class="overlay">
+              <div class="text">Night Drive (2022)</div>
+              <a href="../FILM/NIGHTDRIVE-DRAMA/POKEMON.html" class="button"
+                >Watch</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="numbered-card">
+          <img src="tujuhh.PNG" class="number-image" alt="Number 7" />
+          <div class="card">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXuKPUPX0jqEye1OYt6KZgxlQiPkUsSYA7EPOFsB4hZgjUuJo1Z6puBnAxsVDsINJ29u4&usqp=CAU"
+            />
+            <div class="overlay">
+              <div class="text">Interceptor (2022)</div>
+              <a href="../FILM/INTERCEPTOR-DRAMA/POKEMON.html" class="button"
+                >Watch</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="numbered-card">
+          <img src="lapan.PNG" class="number-image" alt="Number 8" />
+          <div class="card">
+            <img
+              src="https://material.asset.catchplay.com/SNY-ID-002-A1142/artworks/posters/SNY-ID-002-A1142-P1200.jpg?hash=1714246846"
+            />
+            <div class="overlay">
+              <div class="text">Morbius (2022)</div>
+              <a href="../FILM/MORBIUS/DOCTOR.html" class="button">Watch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="numbered-card">
+          <img src="nine.PNG" class="number-image" alt="Number 9" />
+          <div class="card">
+            <img
+              src="https://ntvb.tmsimg.com/assets/p20207831_v_h8_ah.jpg?w=1280&h=720"
+            />
+            <div class="overlay">
+              <div class="text">Scream (2020)</div>
+              <a href="FILM/SCREAM/DOCTOR.html" class="button">Watch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="numbered-card">
+          <img src="puluh.PNG" class="number-image" alt="Number 10" />
+          <div class="card">
+            <img
+              src="https://asset-2.tstatic.net/tribunnewswiki/foto/bank/images/Film-The-Northman-20222.jpg"
+            />
+            <div class="overlay">
+              <div class="text">The Northman (2022)</div>
+              <a href="FILM/NORTHMAN-ACTION/POKEMON.html" class="button"
+                >Watch</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Tambahkan event listener untuk event input (saat pengguna mengetik)
+      searchInput.addEventListener("input", function () {
+        // Tangkap nilai input
+        const searchTerm = searchInput.value.toLowerCase();
+
+        // Jika input pencarian kosong
+        if (searchTerm.trim() === "") {
+          // Kosongkan hasil pencarian
+          searchResults.innerHTML = "";
+
+          // Tampilkan kembali semua card film
+          const allCards = document.querySelectorAll(".card");
+          allCards.forEach((card) => {
+            card.style.display = "block";
+          });
+        } else {
+          // Jika input pencarian tidak kosong
+          // Bersihkan hasil pencarian sebelumnya
+          searchResults.innerHTML = "";
+
+          // Tangkap semua card film
+          const cards = document.querySelectorAll(".card");
+
+          // Iterasi melalui setiap card
+          cards.forEach((card) => {
+            // Tangkap judul film dalam card
+            const title = card.querySelector(".text").textContent.toLowerCase();
+
+            // Bandingkan judul film dengan input pencarian
+            if (title.includes(searchTerm)) {
+              // Jika cocok, tambahkan card ke hasil pencarian
+              searchResults.appendChild(card.cloneNode(true));
+            }
+          });
+        }
+      });
+    </script>
+
+    <script>
+      function toggleDropdown() {
+        var dropdown = document.getElementById("genreDropdown");
+        dropdown.style.display =
+          dropdown.style.display === "block" ? "none" : "block";
+      }
+    </script>
+  </body>
+</html>
